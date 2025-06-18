@@ -1,95 +1,33 @@
 import Image from "next/image";
+import Wave from 'react-wavify'
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>GITITITITI.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+        <div className={styles.moon}>
+          <Image src="/Moon.svg" alt="Moon" width={600} height={600}/>
+          <div className={styles.waterOutline}><Wave fill='#323353' paused={false} options={{height: 100, amplitude: 20, speed: 0.15, points: 3}}/></div>
+          <div className={styles.waterWave}>
+            <Wave fill='url(#gradient)' paused={false} options={{height: 100, amplitude: 20, speed: 0.15, points: 3}}>
+              <defs>
+                <linearGradient id="gradient">
+                  <stop offset="0%"  stopColor="#323353" />
+                  <stop offset="8%" stopColor="#484A77" />
+                  <stop offset="19%"  stopColor="#4D65B4" />
+                  <stop offset="34%" stopColor="#A884F3" />
+                  <stop offset="64%"  stopColor="#A884F3" />
+                  <stop offset="81%" stopColor="#4D65B4" />
+                  <stop offset="90%"  stopColor="#484A77" />
+                  <stop offset="100%" stopColor="#323353" />
+                </linearGradient>
+              </defs>
+            </Wave>
+          </div>
+          <div className={styles.waterFill}></div>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
