@@ -8,7 +8,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.moon}>
           <Image src="/Moon.svg" alt="Moon" width={600} height={600}/>
-          <div className={styles.waterOutline}><Wave fill='#323353' paused={false} options={{height: 100, amplitude: 15, speed: 0.15, points: 3}}/></div>
+          <div className={styles.waterOutline}><Wave fill='#323353' paused={false} options={{height: 95, amplitude: 15, speed: 0.15, points: 3}}/></div>
           <div className={styles.waterWave}>
             <Wave fill='url(#gradient)' paused={false} options={{height: 100, amplitude: 15, speed: 0.15, points: 3}}>
               <defs>
