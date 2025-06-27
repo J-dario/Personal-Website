@@ -1,50 +1,77 @@
 .page {
-  background: linear-gradient(#323353, #484A77 20%, #6B3E75 55%);
+  background: 
+    url('/SmallStars.svg'), 
+    radial-gradient(ellipse at 50% 60%, #A884F3 20%, #4D65B4 60%, #484A77 80%);
+  
+  background-size: auto, cover;
+  background-position: top left, center;
+  
   display: grid;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
 }
+
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
   grid-row-start: 2;
 }
 
-.moon {
-  margin-top: 30%;
-}
-
-.waterOutline {
-  position: absolute;
-  top: 54%;
-  left: 50%;
+.waterContainer {
+  position: fixed;
+  bottom: -450;
+  left: 0;
   width: 100vw;
-  transform: translateX(-50%);
   z-index: 1;
 }
 
 .waterWave {
-  position: absolute;
-  top: 55%;
-  left: 50%;
+  transform: translateY(-150px);
   width: 100vw;
-  transform: translateX(-50%);
   z-index: 1;
 }
 
 .waterFill {
-  background: linear-gradient(0.25turn, #323353, #484A77 8%, #4D65B4 19%, #A884F3 34%, #A884F3 64%, #4D65B4 81%, #484A77 90%, #323353 100%);
+  background: linear-gradient(0.25turn, #4D9BE6 10%, #A884F3 20%, #C7DCD0 40%, #DEDEDE 45%, #DEDEDE 55%, #C7DCD0 60%, #A884F3 80%, #4D9BE6 90%);
   width: 100vw;
-  height: 50vh;
+  height: 55vh;
+  transform: translateY(-160px);
+
+}
+
+@keyframes rotateMoon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moonContainer {
+  position: fixed;
+  width: 900px;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  translate: -50% -30%
+}
+
+.moon {
   position: absolute;
-  top: 70%;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  animation: rotateMoon 100s linear infinite;
+}
+
+.moonRing1 {
+  position: absolute;
+  animation: rotateMoon 150s linear infinite reverse;
+}
+
+.moonRing2 {
+  position: absolute;
+  animation: rotateMoon 200s linear infinite;
 }
