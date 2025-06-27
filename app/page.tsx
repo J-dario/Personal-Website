@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Wave from 'react-wavify'
 import styles from "./page.module.css";
+import { SuffixPathnameNormalizer } from "next/dist/server/normalizers/request/suffix";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+
+        <div className={styles.backgroundClouds}/>
 
         <div className={styles.moonContainer}>
           <div className={styles.moonRing2}>
@@ -21,6 +24,8 @@ export default function Home() {
             <Image src="/Moon Ring 2 (4).svg" alt="MoonPhases" width={900} height={900}/>
           </div>
         </div>
+
+        <div className={styles.frontClouds}/>
 
         <div className={styles.waterContainer}>
 
@@ -60,3 +65,8 @@ export default function Home() {
     </div>
   );
 }
+
+// add clouds tileable
+// ad sfx
+// ad page moving
+// fix image dragging and text highlighting

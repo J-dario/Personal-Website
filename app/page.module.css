@@ -13,7 +13,6 @@
   min-height: 100svh;
 }
 
-
 .main {
   display: flex;
   flex-direction: column;
@@ -22,7 +21,7 @@
 
 .waterContainer {
   position: fixed;
-  bottom: -450;
+  bottom: -450px;
   left: 0;
   width: 100vw;
   z-index: 1;
@@ -39,7 +38,6 @@
   width: 100vw;
   height: 55vh;
   transform: translateY(-160px);
-
 }
 
 @keyframes rotateMoon {
@@ -74,4 +72,32 @@
 .moonRing2 {
   position: absolute;
   animation: rotateMoon 200s linear infinite;
+}
+
+.backgroundClouds {
+  position: fixed;
+  background: url('/BgClouds.svg') repeat-x;
+  height: 450px;
+  width: 2017px;
+
+  translate: -50% -40%;
+  animation: moveClouds 60s linear infinite;
+}
+
+.frontClouds {
+  position: fixed;
+  background: url('/FrontClouds1.svg') repeat-x;
+  height: 450px;
+  width: 2017px;
+  translate: -50% 10%;
+  animation: moveClouds 50s linear infinite reverse;
+}
+
+@keyframes moveClouds {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2017px 0;
+  }
 }
