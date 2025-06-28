@@ -21,7 +21,7 @@ export default function Home() {
             <Image src="/Moon Ring 1.svg" alt="MoonPhases" width={750} height={750}/>
           </div>
           <div className={styles.moonRing2}>
-            <Image src="/Moon Ring 2 (4).svg" alt="MoonPhases" width={900} height={900}/>
+            <Image src="/Moon Ring 2.svg" alt="MoonPhases" width={900} height={900}/>
           </div>
         </div>
 
@@ -65,8 +65,3 @@ export default function Home() {
     </div>
   );
 }
-
-// add clouds tileable
-// ad sfx
-// ad page moving
-// fix image dragging and text highlighting
