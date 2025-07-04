@@ -11,6 +11,7 @@
   align-items: center;
   justify-items: center;
   min-height: 100svh;
+  font-family: var(--font-balthazar), Georgia, 'Times New Roman', Times, serif;
 }
 
 .main {
@@ -41,12 +42,8 @@
 }
 
 @keyframes rotateMoon {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .moonContainer {
@@ -61,7 +58,7 @@
 
 .moon {
   position: absolute;
-  animation: rotateMoon 100s linear infinite;
+  animation: rotateMoon 150s linear infinite;
 }
 
 .moonRing1 {
@@ -71,33 +68,67 @@
 
 .moonRing2 {
   position: absolute;
-  animation: rotateMoon 200s linear infinite;
+  animation: rotateMoon 100s linear infinite;
 }
 
 .backgroundClouds {
   position: fixed;
   background: url('/BgClouds.svg') repeat-x;
   height: 450px;
-  width: 2017px;
-
+  width: 100vw;
   translate: -50% -40%;
-  animation: moveClouds 60s linear infinite;
+  animation: moveClouds 120s linear infinite;
 }
 
 .frontClouds {
   position: fixed;
   background: url('/FrontClouds1.svg') repeat-x;
   height: 450px;
-  width: 2017px;
+  width: 100vw;
   translate: -50% 10%;
-  animation: moveClouds 50s linear infinite reverse;
+  animation: moveClouds 100s linear infinite reverse;
 }
 
 @keyframes moveClouds {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -2017px 0;
-  }
+  0% { background-position: 0 0; }
+  100% { background-position: -2017px 0; }
+}
+
+.textContainer {
+  position: fixed;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  translate: -50% -30%;
+
+  animation: bobText 3s ease-in-out infinite;
+}
+
+.titleText {
+  font-size: 80px;
+  text-shadow:
+    -2px -2px 0 #FFFFFF,
+     2px -2px 0 #FFFFFF,
+    -2px  2px 0 #FFFFFF,
+     2px  2px 0 #FFFFFF,
+     0px  0px 5px #FFFFFF;
+}
+
+
+.subtitleText {
+  font-size: 30;
+    text-shadow:
+    -2px -2px 0 #FFFFFF,
+     2px -2px 0 #FFFFFF,
+    -2px  2px 0 #FFFFFF,
+     2px  2px 0 #FFFFFF,
+     0px  0px 5px #FFFFFF;
+}
+
+@keyframes bobText {
+  0% { translate: -50% -30%; }
+  50% { translate: -50% -40%; }
 }

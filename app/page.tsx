@@ -25,6 +25,11 @@ export default function Home() {
           </div>
         </div>
 
+        <div className={styles.textContainer}>
+          <h1 className={styles.titleText}> Hi, I'm Javier </h1>
+          <h4 className={styles.subtitleText}> student, artist, developer </h4>
+        </div>
+
         <div className={styles.frontClouds}/>
 
         <div className={styles.waterContainer}>
