@@ -1,12 +1,58 @@
+'use client';
+
 import Image from "next/image";
 import Wave from 'react-wavify'
 import styles from "./page.module.css";
 import { SuffixPathnameNormalizer } from "next/dist/server/normalizers/request/suffix";
+import { useRef, useState } from 'react';
 
 export default function Home() {
+  const audioRefs = {
+    waves: useRef<HTMLAudioElement>(null),
+    lofi: useRef<HTMLAudioElement>(null),
+  };
+  const [muted, setMuted] = useState(true);
+
+  const toggleMute = () => {
+    setMuted((prev) => {
+      const isPlaying = !prev;
+      Object.values(audioRefs).forEach((ref) => {
+      
+        if (audioRefs.lofi.current) {
+          audioRefs.lofi.current.volume = 0.3;
+        }
+        
+        if (ref.current) {
+          ref.current.muted = isPlaying;
+          if (!isPlaying) {
+            const playPromise = ref.current.play();
+            if (playPromise !== undefined) {
+              playPromise.catch((error) => {
+                console.warn("Autoplay failed:", error);
+              });
+            }
+          }
+        }
+      });
+      return isPlaying;
+    });
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+
+        <audio ref={audioRefs.waves} autoPlay preload="auto" loop muted>
+          <source src="/waves.mp3" type="audio/mpeg" />
+        </audio>
+
+        <audio ref={audioRefs.lofi} autoPlay preload="auto" loop muted>
+          <source src="/lofi.mp3" type="audio/mpeg" />
+        </audio>
+
+        <button onClick={toggleMute} className={styles.muteButton} aria-label="Toggle Mute">
+          <Image src={muted ? "/Volume X.svg" : "/Volume Icon.svg"} alt={muted ? "Muted" : "Unmuted"} width={64} height={64}/>
+        </button>
 
         <div className={styles.backgroundClouds}/>
 

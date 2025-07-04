@@ -132,3 +132,11 @@
   0% { translate: -50% -25%; }
   50% { translate: -50% -35%; }
 }
+
+.muteButton {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  background-color: transparent;
+  border: none;
+}
