@@ -20,6 +20,12 @@
   scroll-snap-align: start;
 }
 
+.section2 {
+  height: 100vh;
+  scroll-snap-align: start;
+  background-color: #45293F;
+}
+
 .content {
   position: relative;
   width: 100%;
@@ -43,6 +49,16 @@
   background-color: transparent;
   border: none;
   z-index: 2;
+}
+
+.upButton {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+  transform: rotate(180deg);
 }
 
 @keyframes rotateMoon {
@@ -85,7 +101,7 @@
 
 .backgroundClouds {
   position: absolute;
-  top: 30%;
+  bottom: 20%;
   left: 50%;
   height: 450px;
   width: 100vw;
@@ -167,7 +183,6 @@
   pointer-events: none;
 }
 
-
 .titleText {
   font-size: 80px;
   text-shadow:
@@ -179,11 +194,40 @@
 }
 
 .subtitleText {
-  font-size: 30;
+  font-size: 30px;
     text-shadow:
     -2px -2px 0 #FFFFFF,
      2px -2px 0 #FFFFFF,
     -2px  2px 0 #FFFFFF,
      2px  2px 0 #FFFFFF,
      0px  0px 5px #FFFFFF;
+}
+
+@keyframes moveBanner {
+  0% { background-position: 0 0; }
+  100% { background-position: -1920px 0; }
+}
+
+.constructionBannerTop {
+  position: absolute;
+  left: 50%;
+  height: 109px;
+  width: 100vw;
+  background: url('/construction.svg') repeat-x;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: moveBanner 60s linear infinite;
+
+}
+
+.constructionBannerBottom {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  height: 109px;
+  width: 100vw;
+  background: url('/construction.svg') repeat-x;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: moveBanner 60s linear infinite reverse;
 }

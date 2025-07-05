@@ -4,7 +4,7 @@ import Image from "next/image";
 import Wave from 'react-wavify'
 import styles from "./page.module.css";
 import { SuffixPathnameNormalizer } from "next/dist/server/normalizers/request/suffix";
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function Home() {
   const audioRefs = {
@@ -12,11 +12,6 @@ export default function Home() {
     lofi: useRef<HTMLAudioElement>(null),
   };
   const [muted, setMuted] = useState(true);
-const section2Ref = useRef<HTMLDivElement>(null);
-
-const scrollToSection2 = () => {
-  section2Ref.current?.scrollIntoView({ behavior: 'smooth' });
-};
 
   const toggleMute = () => {
     setMuted((prev) => {
@@ -43,6 +38,26 @@ const scrollToSection2 = () => {
     });
   };
 
+  const [inSection1, setInSection1] = useState(true);
+  const section2Ref = useRef<HTMLDivElement>(null);
+  const section1Ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      const section1Top = section1Ref.current?.getBoundingClientRect().top ?? 0;
+      setInSection1(section1Top >= -window.innerHeight / 2);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection2 = () => {
+    section2Ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollToSection1 = () => {
+    section1Ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -51,10 +66,21 @@ const scrollToSection2 = () => {
         <audio ref={audioRefs.waves} autoPlay preload="auto" loop muted><source src="/waves.mp3" type="audio/mpeg" /></audio>
         <audio ref={audioRefs.lofi} autoPlay preload="auto" loop muted><source src="/lofi.mp3" type="audio/mpeg" /></audio>
         <button onClick={toggleMute} className={styles.muteButton} aria-label="Toggle Mute"><Image src={muted ? "/Volume X.svg" : "/Volume Icon.svg"} alt={muted ? "Muted" : "Unmuted"} width={64} height={64}/></button>
-        <button onClick={scrollToSection2} className={styles.downButton} aria-label="To Next Page"><Image src={"/Next.svg"} alt={"Next Page"} width={64} height={64}/></button>
+        {inSection1 && (
+          <button onClick={scrollToSection2} className={styles.downButton} aria-label="To Next Page">
+            <Image src="/Next.svg" alt="Next Page" width={64} height={64}/>
+          </button>
+        )}
+
+        {!inSection1 && (
+          <button onClick={scrollToSection1} className={styles.upButton} aria-label="To Previous Page">
+            <Image src="/Next.svg" alt="Previous Page" width={64} height={64}/>
+          </button>
+        )}
+
 
         {/* Landing Page */}
-        <section className={styles.section}>
+        <section className={styles.section} ref={section1Ref}>
           <div className={styles.content}>
             <div className={styles.backgroundClouds}/>
             <div className={styles.moonContainer}>
@@ -104,8 +130,11 @@ const scrollToSection2 = () => {
         </section>
         
         {/* Construction Page */}
-        <section className={styles.section} ref={section2Ref}>Section 2
-          
+        <section className={styles.section2} ref={section2Ref}>
+          <div className={styles.content}>
+            <div className={styles.constructionBannerTop}/>
+            <div className={styles.constructionBannerBottom}/>
+          </div>
         </section>
       </main>
     </div>
