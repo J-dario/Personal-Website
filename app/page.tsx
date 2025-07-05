@@ -133,6 +133,29 @@ export default function Home() {
         <section className={styles.section2} ref={section2Ref}>
           <div className={styles.content}>
             <div className={styles.constructionBannerTop}/>
+            <div className={styles.textContainer2}>
+              <br/>
+              <h1 className={styles.titleText2}>Thanks for visiting!</h1>
+              <br/><br/>
+              <h4 className={styles.subtitleText2}>I'm still working on this page... in the meantime check out these links to learn more about me!</h4>
+            </div>
+            <div className={styles.socialLinks}>
+              <a href="https://github.com/J-dario" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
+                <Image src="/githubIcon.svg" alt="GitHub" width={200} height={200} />
+                <br/>
+                <p>Check out my Github to see the repo for this and my other projects!</p>
+              </a>
+              <a href="https://www.linkedin.com/in/javier-ignacio-dario" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
+                <Image src="/linkedinIcon.svg" alt="LinkedIn" width={200} height={200} />
+                <br/>
+                <p>Learn more about me on Linkedin!</p>
+              </a>
+              <a href="https://goloob.itch.io" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
+                <Image src="/itchIcon.svg" alt="Email" width={200} height={200} />
+                <br/>
+                <p>Play the games I've made on Itch.io!</p>
+              </a>
+            </div>
             <div className={styles.constructionBannerBottom}/>
           </div>
         </section>
