@@ -140,3 +140,12 @@
   background-color: transparent;
   border: none;
 }
+
+.downButton {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+}

@@ -54,6 +54,10 @@ export default function Home() {
           <Image src={muted ? "/Volume X.svg" : "/Volume Icon.svg"} alt={muted ? "Muted" : "Unmuted"} width={64} height={64}/>
         </button>
 
+        <button onClick={toggleMute} className={styles.downButton} aria-label="To Next Page">
+          <Image src={"/Next.svg"} alt={"Next Page"} width={64} height={64}/>
+        </button>
+
         <div className={styles.backgroundClouds}/>
 
         <div className={styles.moonContainer}>
