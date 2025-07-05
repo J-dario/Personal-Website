@@ -1,44 +1,48 @@
 .page {
   background: 
     url('/SmallStars.svg'), 
-    radial-gradient(ellipse at 50% 60%, #A884F3 20%, #4D65B4 60%, #484A77 80%);
-  
+    radial-gradient(ellipse at 50% 37%, #A884F3 20%, #4D65B4 60%, #484A77 80%);
   background-size: auto, cover;
   background-position: top left, center;
-  
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
+
+  display: block;
+  min-height: 100vh;
   font-family: var(--font-balthazar), Georgia, 'Times New Roman', Times, serif;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  grid-row-start: 2;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
-.waterContainer {
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.muteButton {
   position: fixed;
-  bottom: -450px;
-  left: 0;
-  width: 100vw;
-  z-index: 1;
+  top: 1%;
+  left: 1%;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
 }
 
-.waterWave {
-  transform: translateY(-150px);
-  width: 100vw;
-  z-index: 1;
-}
-
-.waterFill {
-  background: linear-gradient(0.25turn, #4D9BE6 10%, #A884F3 20%, #C7DCD0 40%, #DEDEDE 45%, #DEDEDE 55%, #C7DCD0 60%, #A884F3 80%, #4D9BE6 90%);
-  width: 100vw;
-  height: 55vh;
-  transform: translateY(-160px);
+.downButton {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
 }
 
 @keyframes rotateMoon {
@@ -47,13 +51,16 @@
 }
 
 .moonContainer {
-  position: fixed;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 900px;
   height: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
-  translate: -50% -30%
+  transform: translate(-50%, -30%);
+  pointer-events: none;
 }
 
 .moon {
@@ -71,31 +78,76 @@
   animation: rotateMoon 100s linear infinite;
 }
 
-.backgroundClouds {
-  position: fixed;
-  background: url('/BgClouds.svg') repeat-x;
-  height: 450px;
-  width: 100vw;
-  translate: -50% -40%;
-  animation: moveClouds 120s linear infinite;
-}
-
-.frontClouds {
-  position: fixed;
-  background: url('/FrontClouds1.svg') repeat-x;
-  height: 450px;
-  width: 100vw;
-  translate: -50% 10%;
-  animation: moveClouds 100s linear infinite reverse;
-}
-
 @keyframes moveClouds {
   0% { background-position: 0 0; }
   100% { background-position: -2017px 0; }
 }
 
+.backgroundClouds {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  height: 450px;
+  width: 100vw;
+  background: url('/BgClouds.svg') repeat-x;
+  animation: moveClouds 120s linear infinite;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.frontClouds {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  height: 450px;
+  width: 100vw;
+  background: url('/FrontClouds1.svg') repeat-x;
+  animation: moveClouds 100s linear infinite reverse;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.waterContainer {
+  position: absolute;
+  transform: translateY(470px);
+  bottom: 0%;
+  left: 0%;
+  width: 100vw;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.waterWave {
+  width: 100vw;
+  transform: translateY(-150px);
+}
+
+.waterFill {
+  background: linear-gradient(0.25turn, #4D9BE6 10%, #A884F3 20%, #C7DCD0 40%, #DEDEDE 45%, #DEDEDE 55%, #C7DCD0 60%, #A884F3 80%, #4D9BE6 90%);
+  width: 100vw;
+  height: 55vh;
+  transform: translateY(-160px);
+}
+
+.waterWave {
+  transform: translateY(-150px);
+  width: 100vw;
+}
+
+.waterFill {
+  background: linear-gradient(0.25turn, #4D9BE6 10%, #A884F3 20%, #C7DCD0 40%, #DEDEDE 45%, #DEDEDE 55%, #C7DCD0 60%, #A884F3 80%, #4D9BE6 90%);
+  width: 100vw;
+  height: 55vh;
+  transform: translateY(-160px);
+}
+
+@keyframes bobText {
+  0% { translate: -50% -25%; }
+  50% { translate: -50% -35%; }
+}
+
 .textContainer {
-  position: fixed;
+  position: absolute;
   width: 500px;
   height: 200px;
   display: flex;
@@ -103,9 +155,18 @@
   align-items: center;
   justify-content: center;
   translate: -50% -25%;
-
+  pointer-events: none;
   animation: bobText 4s ease-in-out infinite;
+  z-index: 2;
 }
+
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+}
+
 
 .titleText {
   font-size: 80px;
@@ -117,7 +178,6 @@
      0px  0px 5px #FFFFFF;
 }
 
-
 .subtitleText {
   font-size: 30;
     text-shadow:
@@ -126,26 +186,4 @@
     -2px  2px 0 #FFFFFF,
      2px  2px 0 #FFFFFF,
      0px  0px 5px #FFFFFF;
-}
-
-@keyframes bobText {
-  0% { translate: -50% -25%; }
-  50% { translate: -50% -35%; }
-}
-
-.muteButton {
-  position: fixed;
-  top: 1%;
-  left: 1%;
-  background-color: transparent;
-  border: none;
-}
-
-.downButton {
-  position: fixed;
-  bottom: 1%;
-  right: 1%;
-  background-color: transparent;
-  border: none;
-  z-index: 2;
 }
