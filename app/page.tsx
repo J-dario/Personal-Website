@@ -64,16 +64,16 @@ export default function Home() {
         {/* Audio and UI */}
         <audio ref={audioRefs.waves} autoPlay preload="auto" loop muted><source src="waves.mp3" type="audio/mpeg" /></audio>
         <audio ref={audioRefs.lofi} autoPlay preload="auto" loop muted><source src="lofi.mp3" type="audio/mpeg" /></audio>
-        <button onClick={toggleMute} className={styles.muteButton} aria-label="Toggle Mute"><Image src={muted ? "/Volume X.svg" : "/Volume Icon.svg"} alt={muted ? "Muted" : "Unmuted"} width={64} height={64}/></button>
+        <button onClick={toggleMute} className={styles.muteButton} aria-label="Toggle Mute"><Image src={muted ? "Volume X.svg" : "Volume Icon.svg"} alt={muted ? "Muted" : "Unmuted"} width={64} height={64}/></button>
         {inSection1 && (
           <button onClick={scrollToSection2} className={styles.downButton} aria-label="To Next Page">
-            <Image src="/Next.svg" alt="Next Page" width={64} height={64}/>
+            <Image src="Next.svg" alt="Next Page" width={64} height={64}/>
           </button>
         )}
 
         {!inSection1 && (
           <button onClick={scrollToSection1} className={styles.upButton} aria-label="To Previous Page">
-            <Image src="/Next.svg" alt="Previous Page" width={64} height={64}/>
+            <Image src="Next.svg" alt="Previous Page" width={64} height={64}/>
           </button>
         )}
 
@@ -83,10 +83,10 @@ export default function Home() {
           <div className={styles.content}>
             <div className={styles.backgroundClouds}/>
             <div className={styles.moonContainer}>
-              <div className={styles.moonRing2}><Image src="/Spokes.svg" alt="Spokes" width={800} height={800}/></div>
-              <div className={styles.moon}><Image src="/Moon Center.svg" alt="Moon" width={600} height={600}/></div>
-              <div className={styles.moonRing1}><Image src="/Moon Ring 1.svg" alt="MoonPhases" width={750} height={750}/></div>
-              <div className={styles.moonRing2}><Image src="/Moon Ring 2.svg" alt="MoonPhases" width={900} height={900}/></div>
+              <div className={styles.moonRing2}><Image src="Spokes.svg" alt="Spokes" width={800} height={800}/></div>
+              <div className={styles.moon}><Image src="Moon Center.svg" alt="Moon" width={600} height={600}/></div>
+              <div className={styles.moonRing1}><Image src="Moon Ring 1.svg" alt="MoonPhases" width={750} height={750}/></div>
+              <div className={styles.moonRing2}><Image src="Moon Ring 2.svg" alt="MoonPhases" width={900} height={900}/></div>
             </div>
             <div className={styles.frontClouds}/>
             <div className={styles.textContainer}>
@@ -150,7 +150,7 @@ export default function Home() {
                 <p>Learn more about me on Linkedin!</p>
               </a>
               <a href="https://goloob.itch.io" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
-                <Image src="/itchIcon.svg" alt="Email" width={200} height={200} />
+                <Image src="/itchIcon.svg" alt="Itch.io" width={200} height={200} />
                 <br/>
                 <p>Play the games I&apos;ve made on Itch.io!</p>
               </a>
