@@ -1,6 +1,6 @@
 .page {
   background: 
-    url('/SmallStars.svg'), 
+    url('SmallStars.svg'), 
     radial-gradient(ellipse at 50% 37%, #A884F3 20%, #4D65B4 60%, #484A77 80%);
   background-size: auto, cover;
   background-position: top left, center;
@@ -222,7 +222,7 @@
   left: 50%;
   height: 109px;
   width: 100vw;
-  background: url('/construction.svg') repeat-x;
+  background: url('construction.svg') repeat-x;
   transform: translateX(-50%);
   pointer-events: none;
   animation: moveBanner 60s linear infinite;
@@ -234,7 +234,7 @@
   left: 50%;
   height: 109px;
   width: 100vw;
-  background: url('/construction.svg') repeat-x;
+  background: url('construction.svg') repeat-x;
   transform: translateX(-50%);
   pointer-events: none;
   animation: moveBanner 60s linear infinite reverse;

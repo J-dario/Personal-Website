@@ -140,17 +140,17 @@ export default function Home() {
             </div>
             <div className={styles.socialLinks}>
               <a href="https://github.com/J-dario" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
-                <Image src="/githubIcon.svg" alt="GitHub" width={200} height={200} />
+                <Image src="githubIcon.svg" alt="GitHub" width={200} height={200} />
                 <br/>
                 <p>Check out my Github to see the repo for this and my other projects!</p>
               </a>
               <a href="https://www.linkedin.com/in/javier-ignacio-dario" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
-                <Image src="/linkedinIcon.svg" alt="LinkedIn" width={200} height={200} />
+                <Image src="linkedinIcon.svg" alt="LinkedIn" width={200} height={200} />
                 <br/>
                 <p>Learn more about me on Linkedin!</p>
               </a>
               <a href="https://goloob.itch.io" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
-                <Image src="/itchIcon.svg" alt="Itch.io" width={200} height={200} />
+                <Image src="itchIcon.svg" alt="Itch.io" width={200} height={200} />
                 <br/>
                 <p>Play the games I&apos;ve made on Itch.io!</p>
               </a>
