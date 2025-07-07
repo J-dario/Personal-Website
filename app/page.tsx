@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Wave from 'react-wavify'
 import styles from "./page.module.css";
-import { SuffixPathnameNormalizer } from "next/dist/server/normalizers/request/suffix";
 import { useRef, useState, useEffect } from 'react';
 
 export default function Home() {
