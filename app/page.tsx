@@ -62,8 +62,8 @@ export default function Home() {
       <main className={styles.main}>
 
         {/* Audio and UI */}
-        <audio ref={audioRefs.waves} autoPlay preload="auto" loop muted><source src="/waves.mp3" type="audio/mpeg" /></audio>
-        <audio ref={audioRefs.lofi} autoPlay preload="auto" loop muted><source src="/lofi.mp3" type="audio/mpeg" /></audio>
+        <audio ref={audioRefs.waves} autoPlay preload="auto" loop muted><source src="waves.mp3" type="audio/mpeg" /></audio>
+        <audio ref={audioRefs.lofi} autoPlay preload="auto" loop muted><source src="lofi.mp3" type="audio/mpeg" /></audio>
         <button onClick={toggleMute} className={styles.muteButton} aria-label="Toggle Mute"><Image src={muted ? "/Volume X.svg" : "/Volume Icon.svg"} alt={muted ? "Muted" : "Unmuted"} width={64} height={64}/></button>
         {inSection1 && (
           <button onClick={scrollToSection2} className={styles.downButton} aria-label="To Next Page">

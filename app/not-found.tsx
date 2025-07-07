@@ -8,7 +8,7 @@ export default function NotFound() {
             <main className={styles.main}>
                 <div className={styles.four04}>
                     <div className={styles.moonContainer}>
-                        <div><Image src="/Moon Center.svg" alt="Moon" width={400} height={400}/></div>
+                        <div><Image src="Moon Center.svg" alt="Moon" width={400} height={400}/></div>
                     </div>
                     <h2 className={styles.four}>4&nbsp;&nbsp;&nbsp;&nbsp;4</h2>
                 </div>
