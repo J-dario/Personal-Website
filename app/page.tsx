@@ -90,7 +90,7 @@ export default function Home() {
             </div>
             <div className={styles.frontClouds}/>
             <div className={styles.textContainer}>
-              <h1 className={styles.titleText}> Hi, I'm Javier </h1>
+              <h1 className={styles.titleText}> Hi, I&apos;m Javier </h1>
               <h4 className={styles.subtitleText}> student, artist, developer </h4>
             </div>
             <div className={styles.waterContainer}>
@@ -136,7 +136,7 @@ export default function Home() {
               <br/>
               <h1 className={styles.titleText2}>Thanks for visiting!</h1>
               <br/><br/>
-              <h4 className={styles.subtitleText2}>I'm still working on this page... in the meantime check out these links to learn more about me!</h4>
+              <h4 className={styles.subtitleText2}>I&apos;m still working on this page... in the meantime check out these links to learn more about me!</h4>
             </div>
             <div className={styles.socialLinks}>
               <a href="https://github.com/J-dario" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
@@ -152,7 +152,7 @@ export default function Home() {
               <a href="https://goloob.itch.io" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
                 <Image src="/itchIcon.svg" alt="Email" width={200} height={200} />
                 <br/>
-                <p>Play the games I've made on Itch.io!</p>
+                <p>Play the games I&apos;ve made on Itch.io!</p>
               </a>
             </div>
             <div className={styles.constructionBannerBottom}/>
