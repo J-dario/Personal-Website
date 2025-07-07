@@ -289,3 +289,32 @@
   color: white;
   font-size: 20px;
 }
+
+.four04 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -80%);
+  pointer-events: none;
+
+  font-size: 400px;
+  color: #C7DCD0;
+}
+
+.four {
+  transform: translate(0%, 15%);
+}
+
+.four04TxT {
+  position: absolute;
+  transform: translate(-50%, -10%);
+  font-size: 100px;
+  color: #C7DCD0;
+  bottom: 30%;
+  left: 50%;
+}
