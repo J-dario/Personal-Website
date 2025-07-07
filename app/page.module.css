@@ -1,6 +1,6 @@
 .page {
   background: 
-    url('./public/SmallStars.svg'), 
+    url('../public/SmallStars.svg'), 
     radial-gradient(ellipse at 50% 37%, #A884F3 20%, #4D65B4 60%, #484A77 80%);
   background-size: auto, cover;
   background-position: top left, center;
@@ -114,7 +114,7 @@
   left: 50%;
   height: 450px;
   width: 100vw;
-  background: url('./public/BgClouds.svg') repeat-x;
+  background: url('../public/BgClouds.svg') repeat-x;
   animation: moveClouds 120s linear infinite;
   transform: translateX(-50%);
   pointer-events: none;
@@ -126,7 +126,7 @@
   left: 50%;
   height: 450px;
   width: 100vw;
-  background: url('./public/FrontClouds1.svg') repeat-x;
+  background: url('../public/FrontClouds1.svg') repeat-x;
   animation: moveClouds 100s linear infinite reverse;
   transform: translateX(-50%);
   pointer-events: none;
@@ -222,7 +222,7 @@
   left: 50%;
   height: 109px;
   width: 100vw;
-  background: url('./public/construction.svg') repeat-x;
+  background: url('../public/construction.svg') repeat-x;
   transform: translateX(-50%);
   pointer-events: none;
   animation: moveBanner 60s linear infinite;
@@ -234,7 +234,7 @@
   left: 50%;
   height: 109px;
   width: 100vw;
-  background: url('./public/construction.svg') repeat-x;
+  background: url('../public/construction.svg') repeat-x;
   transform: translateX(-50%);
   pointer-events: none;
   animation: moveBanner 60s linear infinite reverse;
