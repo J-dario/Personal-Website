@@ -134,6 +134,12 @@ export default function Home() {
         {/* Construction Page */}
         <section className={styles.section2} ref={section2Ref}>
           <div className={styles.content}>
+            <div className={styles.S2wave1}><Wave fill="#2E222F" paused={false} options={{height: 95, amplitude: 15, speed: 0.15, points: 3}}/></div>
+            <div className={styles.S2wave2}><Wave fill="#45293F" paused={false} options={{height: 95, amplitude: 15, speed: 0.15, points: 3}}/></div>
+            
+            
+
+
             <div className={styles.textContainer2}>
               <br/>
               <h1 className={styles.titleText2}>Thanks for visiting!</h1>
