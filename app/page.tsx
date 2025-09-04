@@ -131,12 +131,11 @@ export default function Home() {
         {/* Construction Page */}
         <section className={styles.section2} ref={section2Ref}>
           <div className={styles.content}>
-            <div className={styles.constructionBannerTop}/>
             <div className={styles.textContainer2}>
               <br/>
               <h1 className={styles.titleText2}>Thanks for visiting!</h1>
               <br/><br/>
-              <h4 className={styles.subtitleText2}>I&apos;m still working on this page... in the meantime check out these links to learn more about me!</h4>
+              <h4 className={styles.subtitleText2}>Check out these links to learn more about me!</h4>
             </div>
             <div className={styles.socialLinks}>
               <a href="https://github.com/J-dario" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
@@ -155,7 +154,6 @@ export default function Home() {
                 <p>Play the games I&apos;ve made on Itch.io!</p>
               </a>
             </div>
-            <div className={styles.constructionBannerBottom}/>
           </div>
         </section>
       </main>
