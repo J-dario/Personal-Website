@@ -40,11 +40,14 @@ export default function Home() {
   const [inSection1, setInSection1] = useState(true);
   const section2Ref = useRef<HTMLDivElement>(null);
   const section1Ref = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const handleScroll = () => {
       const section1Top = section1Ref.current?.getBoundingClientRect().top ?? 0;
       setInSection1(section1Top >= -window.innerHeight / 2);
     };
+
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

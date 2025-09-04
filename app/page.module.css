@@ -11,6 +11,8 @@
 }
 
 .main {
+  /*height: 100vh;*/ 
+  /*overflow-y: scroll;*/ 
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
@@ -317,8 +319,4 @@
   color: #C7DCD0;
   bottom: 30%;
   left: 50%;
-}
-
-.transitionGradient {
-  
 }
