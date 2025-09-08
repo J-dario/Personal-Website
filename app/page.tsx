@@ -134,18 +134,18 @@ export default function Home() {
         {/* Construction Page */}
         <section className={styles.section2} ref={section2Ref}>
           <div className={styles.content}>
+
             <div className={styles.S2wave1}><Wave fill="#2E222F" paused={false} options={{height: 95, amplitude: 15, speed: 0.15, points: 3}}/></div>
             <div className={styles.S2wave2}><Wave fill="#45293F" paused={false} options={{height: 95, amplitude: 15, speed: 0.15, points: 3}}/></div>
             
             
-
-
             <div className={styles.textContainer2}>
               <br/>
-              <h1 className={styles.titleText2}>Thanks for visiting!</h1>
-              <br/><br/>
-              <h4 className={styles.subtitleText2}>Check out these links to learn more about me!</h4>
+              <h1 className={styles.titleText2}>Check out these links to learn more about me!</h1>
+              <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+              <h4 className={styles.subtitleText2}>Thanks For Visiting!</h4>
             </div>
+            
             <div className={styles.socialLinks}>
               <a href="https://github.com/J-dario" target="_blank" rel="noopener noreferrer" className={styles.socialItem}>
                 <Image src="githubIcon.svg" alt="GitHub" width={200} height={200} />
@@ -163,6 +163,7 @@ export default function Home() {
                 <p>Play the games I&apos;ve made on Itch.io!</p>
               </a>
             </div>
+
           </div>
         </section>
       </main>
